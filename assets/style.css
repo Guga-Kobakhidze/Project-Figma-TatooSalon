@@ -36,8 +36,8 @@
   --classic-font: 18px;
   --small-font: 24px;
   --medium-font: 32px;
-  --large-font: 64px;
-  --largest-font: 112px;
+  --large-font: clamp(40px, 3vw, 64px);
+  --largest-font: clamp(80px, 3vw, 112px);
 
   /* width */
   --max-pro: 100%;
@@ -141,6 +141,11 @@ ul {
 }
 
 /* Home Section */
+
+.toggle,
+.mobile_logo {
+  display: none;
+}
 
 .head_content {
   display: flex;
@@ -630,7 +635,7 @@ ul {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  max-width: 1067px;
+  max-width: 1200px;
   width: 100%;
   padding: 70px 0;
   display: flex;
@@ -749,4 +754,177 @@ ul {
   font-weight: var(--bold-w7);
   letter-spacing: 1.44px;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 1023px) {
+  .ma-b {
+    margin-bottom: 100px;
+  }
+  .head_content,
+  .main_content {
+    width: var(--max-pro);
+    align-items: center;
+  }
+  .image_content,
+  .about_content .contact_desc::before,
+  .header_section .navigation,
+  .header_section .logo {
+    display: none;
+  }
+  .brand_items {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .brand_items img {
+    width: 30%;
+  }
+  .about_content {
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .tatoo_desc {
+    padding: 32px 32px 0;
+    border-radius: 32px;
+    background: #1e1c17;
+  }
+  .about_content .tatoo_desc img {
+    width: 243px;
+    align-self: center;
+    padding: 0;
+  }
+  .about_content .title,
+  .client_section .title,
+  .faq_content .title {
+    text-align: start;
+    max-width: 263px;
+  }
+  .about_content .contact_desc .title,
+  .about_content .contact_desc p,
+  .about_content .offer_image {
+    margin-left: 0;
+  }
+  .tatoo_offers,
+  #email {
+    width: var(--max-pro);
+  }
+  .offer_image {
+    height: 365px;
+  }
+  .offer_image img {
+    width: 197px;
+    height: 239px;
+  }
+  .about_content .offer_image:first-child {
+    margin-bottom: 40px;
+  }
+  .about_content .contact_desc {
+    width: var(--max-pro);
+    align-items: start;
+    margin: 0;
+    border-radius: 32px;
+    background: #1e1c17;
+    padding-bottom: 32px;
+  }
+  .about_content .contact_desc img {
+    position: relative;
+    width: var(--max-pro);
+  }
+  .about_content .contact_desc p {
+    font-size: 14px;
+    max-width: 263px;
+    text-align: start;
+  }
+  .contact_desc .title,
+  .contact_desc p,
+  .contact_desc .normal {
+    padding-left: 32px !important;
+  }
+  .client_images .small-img:nth-child(3) {
+    width: 150px;
+    height: 150px;
+  }
+  .client_images .small-img {
+    width: 100px;
+    height: 100px;
+  }
+  .carousel_buttons .handle {
+    position: absolute;
+    bottom: -30px;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+  }
+  .client_desc {
+    width: 327px;
+    height: 228px;
+  }
+  .client_desc .client_name {
+    margin-bottom: 20px;
+    letter-spacing: -0.64px;
+    font-size: 24px;
+  }
+  .client_desc .paragraph {
+    font-size: 12px;
+  }
+  .faq_content .title {
+    text-align: center;
+    max-width: var(--max-pro);
+    margin-bottom: 10px;
+  }
+  .faq_cards .faq_card h3,
+  .main_content button {
+    font-size: 16px;
+  }
+  .footer_content {
+    flex-direction: column;
+    align-items: start;
+    gap: 40px;
+    margin-top: 165px;
+  }
+  .footer_menus {
+    flex-direction: column;
+    margin-left: 50px;
+    gap: 40px;
+  }
+  .footer_menus .footer_nav:last-child ul::before {
+    left: -48px;
+  }
+  .form_section {
+    top: -370px;
+    flex-direction: column;
+  }
+  .contact_forms {
+    width: var(--max-pro);
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .form_section .contact_forms .input_sect {
+    display: flex;
+    flex-direction: column;
+  }
+  .form_section .contact_forms .input_sect .normal {
+    width: var(--max-pro);
+    transform: translateX(0);
+    margin-top: 12px;
+  }
+  .copyright_section {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .header_section {
+    justify-content: space-between;
+    padding: 20px 20px;
+  }
+  .toggle,
+  .mobile_logo {
+    display: block;
+  }
+  .toggle i {
+    color: var(--classic-white);
+    font-size: 20px;
+    cursor: pointer;
+  }
 }
